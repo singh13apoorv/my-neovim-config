@@ -1,7 +1,7 @@
 # my-neovim-config
 This is a changing directory of my personal neovim configuration
 
-#How to use this neovim configuration for yourself
+# How to use this neovim configuration for yourself
 if you have a UNIX/LINUX machine do the following
 -- first go to your home directory
 -- mkdir ~/.config
