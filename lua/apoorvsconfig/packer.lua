@@ -79,6 +79,9 @@ return packer.startup(function(use)
     --floating terminal
     use('voldikss/vim-floaterm')
 
+    --tab switcher (harpoon)
+    use('ThePrimeagen/harpoon')
+
     if packer_bootstrap then
         require("packer").sync()
     end
