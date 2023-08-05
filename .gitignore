@@ -1,0 +1,5 @@
+--following directory is created when someone runs the :PackerSync command on their computer
+plugin/
+
+--ignoring macos hidden created file
+*.DS_Store
