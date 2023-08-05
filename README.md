@@ -13,6 +13,7 @@ if you have a UNIX/LINUX machine do the following: <br>
     https://github.com/singh13apoorv/my-neovim-config.git <br>
 6> nvim lua/apoorvsconfig/packer.lua <br>
 7> do [Esc]:PackerSync and enter. <br>
+8> go to file init.lua and do [Esc]:so.<br>
 <br>
 8> go back to home directory. <br> 
 9> mkdir ~/.vim <br>
