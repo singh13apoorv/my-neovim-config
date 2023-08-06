@@ -59,7 +59,7 @@ return packer.startup(function(use)
     --configure lsp servers
     use('neovim/nvim-lspconfig')
     use('hrsh7th/cmp-nvim-lsp')
-    use('glepnir/lspsaga.nvim')
+    use({ 'nvimdev/lspsaga.nvim', branch = 'main' })
     use('onsails/lspkind.nvim')
 
     --git integration
