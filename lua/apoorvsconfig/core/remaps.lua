@@ -45,7 +45,7 @@ remap("n", "<leader>fs", builtin.grep_string, {})
 remap("n", "<F5>", ":MaximizerToggle<CR>")
 
 --nvimtreetoggle remap
-remap("n", "<leader>of", ":NvimTreeToggle<CR>")
+remap("n", "<leader>tt", ":NvimTreeToggle<CR>")
 
 --Treesitter playgroundtoggle
 remap("n", "<leader>tsp", ":TSPlaygroundToggle<CR>")
