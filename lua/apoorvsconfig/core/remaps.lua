@@ -37,7 +37,7 @@ remap("n", "<leader>pt", ":tabp<CR>") --previous tab
 
 --telescope remap
 remap("n", "<leader>ff", builtin.find_files, {})
-remap("n", "<leader>ts", builtin.live_grep, {}) 
+remap("n", "<leader>gs", builtin.live_grep, {}) 
 remap("n", "<C-g>", builtin.git_files, {})
 remap("n", "<leader>fs", builtin.grep_string, {})
 
