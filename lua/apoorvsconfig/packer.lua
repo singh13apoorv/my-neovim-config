@@ -26,7 +26,6 @@ end
 
 return packer.startup(function(use)
     use("wbthomason/packer.nvim")
-    use { "ellisonleao/gruvbox.nvim" } --my prefered colorscheme
     use('christoomey/vim-tmux-navigator') --tmux & split window navigation
     use('szw/vim-maximizer') --maximize and restore current window
     use('numToStr/comment.nvim') --commenting with gc
@@ -89,6 +88,11 @@ return packer.startup(function(use)
 
     --tab switcher (harpoon)
     use('ThePrimeagen/harpoon')
+
+    --prefered colorschemes
+    use { "ellisonleao/gruvbox.nvim" }
+    use ('AlexvZyl/nordic.nvim')
+    use {"xero/miasma.nvim"}
 
     if packer_bootstrap then
         require("packer").sync()
