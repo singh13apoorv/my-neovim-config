@@ -11,6 +11,9 @@ local remap = vim.keymap.set
 --setting the directory view command(:Ex to leaderdv)
 remap("n", "<leader>dv", vim.cmd.Ex)
 
+--clearing search history
+remap("n", "<C-d>", ":nohlsearch<CR>")
+
 --setting up J and K in visual mode to move the whole selected file up and down with foramtting in the if, for, while loops
 remap("v", "J", ":m '>+1<CR>gv=gv")
 remap("v", "K", ":m '<-2<CR>gv=gv")
