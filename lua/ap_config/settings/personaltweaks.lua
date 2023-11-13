@@ -1,4 +1,4 @@
-local opt = vim.opt --making this consise and reusable for future ref.
+local opt = vim.opt --making this consise and reusable fure ref.
 
 --line number and relative line number
 opt.relativenumber = true
@@ -36,3 +36,4 @@ opt.undofile = true
 
 --making neovim fast
 opt.updatetime = 50
+
