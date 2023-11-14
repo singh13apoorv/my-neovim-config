@@ -3,3 +3,6 @@ plugin/
 
 --ignoring macos hidden created file
 *.DS_Store
+
+--ignoring this laptops setup
+./lazy-lock.json
