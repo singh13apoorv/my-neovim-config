@@ -79,7 +79,7 @@ local config = function()
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
-	local pylint = require("efmls-configs.linters.pylint")
+	local flake8 = require("efmls-configs.linters.flake8")
 	local black = require("efmls-configs.formatters.black")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
 	local prettierd = require("efmls-configs.formatters.prettier_d")
@@ -103,7 +103,7 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
-				python = { pylint, black },
+				python = { flake8, black },
 				typescript = { eslint_d, prettierd },
 				javascript = { eslint_d, prettierd },
 			},
