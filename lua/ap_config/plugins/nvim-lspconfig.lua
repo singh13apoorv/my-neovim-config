@@ -46,6 +46,7 @@ local config = function()
 		settings = {
 			pyright = {
 				disableOrganizeImports = false,
+				venvPath = "/opt/anaconda3/envs",
 				analysis = {
 					useLibraryCodeForTypes = true,
 					autoSearchPaths = true,
