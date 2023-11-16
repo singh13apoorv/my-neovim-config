@@ -22,6 +22,8 @@ local config = function()
             "lua",
             "python",
             "rust",
+            "markdown",
+            "markdown_inline",
             "tsx",
             "typescript",
             "yaml",
