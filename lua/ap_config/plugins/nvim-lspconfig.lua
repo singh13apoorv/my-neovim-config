@@ -77,6 +77,19 @@ local config = function()
 		root_dir = lspconfig.util.root_pattern("package.json", "jsconfig.json", ".git"),
 	})
 
+	lspconfig.html.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			html = {
+				format = {
+					indentInnerHtml = true,
+					templating = true,
+				},
+			},
+		},
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -91,6 +104,7 @@ local config = function()
 			"python",
 			"typescript",
 			"javascript",
+			"html5",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -106,6 +120,7 @@ local config = function()
 				python = { flake8, black },
 				typescript = { eslint_d, prettierd },
 				javascript = { eslint_d, prettierd },
+				html5 = { eslint_d, prettierd },
 			},
 		},
 	})
