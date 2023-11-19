@@ -90,6 +90,16 @@ local config = function()
 		},
 	})
 
+	lspconfig.cssls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = {
+			"css",
+			"scss",
+			"less",
+		},
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -104,7 +114,10 @@ local config = function()
 			"python",
 			"typescript",
 			"javascript",
-			"html5",
+			"html",
+			"css",
+			"scss",
+			"less",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -120,7 +133,10 @@ local config = function()
 				python = { flake8, black },
 				typescript = { eslint_d, prettierd },
 				javascript = { eslint_d, prettierd },
-				html5 = { eslint_d, prettierd },
+				html = { eslint_d, prettierd },
+				css = { eslint_d, prettierd },
+				scss = { eslint_d, prettierd },
+				less = { eslint_d, prettierd },
 			},
 		},
 	})
