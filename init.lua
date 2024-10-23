@@ -1,2 +1,2 @@
-require("apoorvConf.lazy")
-require("apoorvConf.myConf.init")
+require "apoorvConf.lazy"
+require "apoorvConf.myConf.init"

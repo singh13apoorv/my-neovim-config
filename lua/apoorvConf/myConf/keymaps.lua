@@ -1,7 +1,7 @@
 local builtin_setup, builtin = pcall(require, "telescope.builtin")
 if not builtin_setup then
-  print "builtin in not working"
-  return
+    print "builtin in not working"
+    return
 end
 
 local remap = vim.keymap.set
