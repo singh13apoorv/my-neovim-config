@@ -15,19 +15,28 @@ return {
             end
         end
 
+        -- Register the custom linter for pylint
+        lint.linters.pylint = {
+            name = "pylint",
+            cmd = get_conda_pylint_path(),
+            args = { "--from-stdin", "%:p" },
+            stream = "stdout",
+            ignore_exitcode = false,
+            parser = lint.parser.from_pattern(
+                [[
+                ^(.+?):(\d+):?(\d*):? (.+)$
+            ]],
+                { "filename", "lnum", "col", "message" }
+            ), -- Parser for output
+        }
+
         lint.linters_by_ft = {
             javascript = { "eslint_d" },
             typescript = { "eslint_d" },
             javascriptreact = { "eslint_d" },
             typescriptreact = { "eslint_d" },
             svelte = { "eslint_d" },
-            python = {
-                command = get_conda_pylint_path(), -- Call the function to get the path
-                args = { "--from-stdin", "%:p" }, -- Example args to pass, modify as needed
-                stream = "stdout",
-                ignore_exitcode = true, -- Ignore exit code to allow further handling
-                env = { PYTHONPATH = vim.env.PYTHONPATH },
-            },
+            python = { "pylint" },
         }
 
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
