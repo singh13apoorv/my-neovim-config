@@ -22,12 +22,10 @@ return {
             args = { "--from-stdin", "%:p" },
             stream = "stdout",
             ignore_exitcode = false,
-            parser = lint.parser.from_pattern(
-                [[
-                ^(.+?):(\d+):?(\d*):? (.+)$
-            ]],
+            parser = require("lint.parser").from_pattern(
+                [[^(.+?):(\d+):?(\d*):? (.+)$]],
                 { "filename", "lnum", "col", "message" }
-            ), -- Parser for output
+            ), -- Correctly import parser
         }
 
         lint.linters_by_ft = {
