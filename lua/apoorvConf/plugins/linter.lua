@@ -4,13 +4,26 @@ return {
     config = function()
         local lint = require "lint"
 
+        local function get_conda_pylint_path()
+            local conda_prefix = vim.env.CONDA_PREFIX
+            if conda_prefix then
+                -- Return the full path to the pylint executable inside the active Conda environment
+                return conda_prefix .. "/bin/pylint"
+            else
+                -- Fallback to system pylint if no Conda environment is active
+                return "/usr/local/bin/pylint"
+            end
+        end
+
         lint.linters_by_ft = {
             javascript = { "eslint_d" },
             typescript = { "eslint_d" },
             javascriptreact = { "eslint_d" },
             typescriptreact = { "eslint_d" },
             svelte = { "eslint_d" },
-            python = { "pylint" },
+            python = {
+                cmd = get_conda_pylint_path(),
+            },
         }
 
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

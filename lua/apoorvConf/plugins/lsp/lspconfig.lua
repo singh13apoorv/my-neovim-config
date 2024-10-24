@@ -1,3 +1,15 @@
+-- Function to get the Python path from the active Conda environment
+local function get_conda_python_path()
+    local conda_prefix = vim.env.CONDA_PREFIX
+    if conda_prefix then
+        -- Return the full path to the Python executable inside the active Conda environment
+        return conda_prefix .. "/bin/python"
+    else
+        -- Fallback to system Python if no Conda environment is active
+        return "/usr/bin/python3"
+    end
+end
+
 return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
@@ -83,6 +95,18 @@ return {
             function(server_name)
                 lspconfig[server_name].setup {
                     capabilities = capabilities,
+                }
+            end,
+            ["pyright"] = function()
+                local python_path = get_conda_python_path()
+                lspconfig["pyright"].setup {
+                    capabilities = capabilities,
+                    settings = {
+                        python = {
+                            pythonPath = python_path,
+                        },
+                        print("Python LSP using path: " .. python_path),
+                    },
                 }
             end,
             ["svelte"] = function()

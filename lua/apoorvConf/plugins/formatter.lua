@@ -5,6 +5,7 @@ return {
         local conform = require "conform"
         -- Define Prettier arguments once
         local prettier_args = { "--tab-width", "4" }
+        local python_args = { { "--tab-width", "4" }, { "--max-line-length", "88" } }
 
         conform.setup {
             formatters_by_ft = {
@@ -21,7 +22,7 @@ return {
                 graphql = { "prettier", args = prettier_args },
                 liquid = { "prettier", args = prettier_args },
                 lua = { "stylua", args = prettier_args },
-                python = { "isort", "black", args = prettier_args },
+                python = { "isort", "black", args = python_args },
             },
             format_on_save = {
                 lsp_fallback = true,
