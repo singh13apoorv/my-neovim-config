@@ -22,7 +22,11 @@ return {
             typescriptreact = { "eslint_d" },
             svelte = { "eslint_d" },
             python = {
-                cmd = get_conda_pylint_path(),
+                command = get_conda_pylint_path(), -- Call the function to get the path
+                args = { "--from-stdin", "%:p" }, -- Example args to pass, modify as needed
+                stream = "stdout",
+                ignore_exitcode = true, -- Ignore exit code to allow further handling
+                env = { PYTHONPATH = vim.env.PYTHONPATH },
             },
         }
 
