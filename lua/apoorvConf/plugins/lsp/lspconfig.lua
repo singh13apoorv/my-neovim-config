@@ -109,6 +109,29 @@ return {
                     },
                 }
             end,
+            ["rust_analyzer"] = function()
+                lspconfig["rust_analyzer"].setup {
+                    capabilities = capabilities,
+                    cmd = {
+                        "rustup",
+                        "run",
+                        "stable",
+                        "rust-analyzer",
+                    },
+                    settings = {
+                        ["rust-analyzer"] = {
+                            cargo = {
+                                buildScripts = {
+                                    enable = true,
+                                },
+                            },
+                            proMacro = {
+                                enable = true,
+                            },
+                        },
+                    },
+                }
+            end,
             ["svelte"] = function()
                 -- configure svelte server
                 lspconfig["svelte"].setup {
