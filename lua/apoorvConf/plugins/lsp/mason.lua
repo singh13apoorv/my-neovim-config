@@ -51,6 +51,11 @@ return {
                 "black", -- python formatter
                 "pylint", -- python linter
                 "eslint_d", -- js linter
+                "clang-format", -- clang formatter
+                "ast-grep", -- rust formatter
+                "codelldb", -- c, c++, rust and zig debugger.
+                "debugpy", -- python debugger
+                "delve", -- go debugger
             },
         }
     end,
