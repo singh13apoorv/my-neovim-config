@@ -105,7 +105,18 @@ return {
                         python = {
                             pythonPath = python_path,
                         },
-                        print("Python LSP using path: " .. python_path),
+                    },
+                }
+            end,
+
+            ["clangd"] = function()
+                local c_path = "/opt/homebrew/opt/llvm/bin/clangd"
+                lspconfig["clangd"].setup {
+                    capabilities = capabilities,
+                    settings = {
+                        clangd = {
+                            path = c_path,
+                        },
                     },
                 }
             end,
