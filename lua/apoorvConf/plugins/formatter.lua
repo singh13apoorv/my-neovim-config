@@ -23,6 +23,8 @@ return {
                 liquid = { "prettier", args = prettier_args },
                 lua = { "stylua", args = prettier_args },
                 python = { "isort", "black", args = python_args },
+                cpp = { "clang-format", args = python_args },
+                rust = { "clang-format", args = python_args },
             },
             format_on_save = {
                 lsp_fallback = true,
