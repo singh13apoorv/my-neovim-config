@@ -17,6 +17,7 @@ return {
         "jay-babu/mason-nvim-dap.nvim",
         "nvim-neotest/nvim-nio",
     },
+    event = "VeryLazy",
     config = function()
         local dap = require "dap"
         local dapui = require "dapui"
@@ -24,6 +25,12 @@ return {
         -- Setup DAP UI
         require("dapui").setup()
 
+        dap.listeners.before.attach["dapui_config"] = function()
+            dapui.open()
+        end
+        dap.listeners.before.launch["dapui_config"] = function()
+            dapui.open()
+        end
         -- Open/close UI automatically
         dap.listeners.before.event_initialized["dapui_config"] = function()
             dapui.open()
