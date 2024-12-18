@@ -6,6 +6,7 @@ return {
         -- Define Prettier arguments once
         local prettier_args = { "--tab-width", "4" }
         local python_args = { { "--tab-width", "4" }, { "--max-line-length", "88" } }
+        local clang_format_args = { '-style="{IndentWidth: 4}"' }
 
         conform.setup {
             formatters_by_ft = {
@@ -23,8 +24,8 @@ return {
                 liquid = { "prettier", args = prettier_args },
                 lua = { "stylua", args = prettier_args },
                 python = { "isort", "black", args = python_args },
-                cpp = { "clang-format", args = python_args },
-                rust = { "clang-format", args = python_args },
+                cpp = { "clang-format", args = clang_format_args },
+                rust = { "clang-format", args = clang_format_args },
             },
             format_on_save = {
                 lsp_fallback = true,
