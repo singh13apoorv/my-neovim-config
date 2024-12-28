@@ -1,7 +1,7 @@
 local config = function()
     require("lualine").setup {
         options = {
-            theme = "auto",
+            theme = "palenight",
             globalstatus = true,
         },
         sections = {
