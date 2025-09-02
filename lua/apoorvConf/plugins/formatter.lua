@@ -8,6 +8,9 @@ return {
         local python_args = { { "--tab-width", "4" }, { "--max-line-length", "88" } }
         local clang_format_args = { '-style="{IndentWidth: 4}"' }
 
+        -- Arguments for rustfmt
+        local rustfmt_args = { "--config", "tab_spaces=4,max_width=120,fn_single_line=false" }
+
         conform.setup {
             formatters_by_ft = {
                 javascript = { "prettier", args = prettier_args },
@@ -25,7 +28,7 @@ return {
                 lua = { "stylua", args = prettier_args },
                 python = { "isort", "black", args = python_args },
                 cpp = { "clang-format", args = clang_format_args },
-                rust = { "clang-format", args = clang_format_args },
+                rust = { "rustfmt", args = rustfmt_args },
             },
             format_on_save = {
                 lsp_fallback = true,
